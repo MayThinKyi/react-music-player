@@ -6,7 +6,7 @@ import { MusicPlayerContext } from "./contexts/AppContext";
 import Slider from "./components/Slider";
 
 function App() {
-  const [menuState, setMenuState] = useState(true);
+  const [menuState, setMenuState] = useState(false);
   const [currentSongId, setCurrentSongId] = useState(1);
   return (
     <div className="App relative transition-all">
