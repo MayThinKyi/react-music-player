@@ -9,7 +9,7 @@ function App() {
   const [menuState, setMenuState] = useState(true);
   const [currentSongId, setCurrentSongId] = useState(1);
   return (
-    <div className="App relative ">
+    <div className="App relative transition-all">
       <MusicPlayerContext.Provider
         value={{
           menuState,

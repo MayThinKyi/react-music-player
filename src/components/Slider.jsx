@@ -8,32 +8,37 @@ const Slider = () => {
   const { menuState, setMenuState } = useContext(MusicPlayerContext);
 
   return (
-    <div className="bg-white  z-[999] w-[100vw] md:w-[350px] slider   h-[100vh] shadow-2xl fixed top-0 left-0 overflow-x-hidden overflow-y-scroll">
-      <div className="flex justify-around sm:justify-between items-center">
-        <h1 className="text-2xl  sm:px-8 pt-6 font-semibold ">My Library</h1>
-        <div
-          onClick={() => {
-            setMenuState(!menuState);
-          }}
-          className="md:hidden gap-1 mt-5 hover:bg-black hover:text-white border-2 border-black py-2 px-3 flex items-center"
-        >
-          <h1>Library</h1>
-          <FaMusic />
+    <div className="wrapper">
+      <div
+        className={` absolute top-0 left-0 shadow-3xl overflow-x-hidden overflow-y-scroll bg-white z-[999] w-[100vw] md:w-[350px] 
+       h-[100vh]  `}
+      >
+        <div className="flex justify-around sm:justify-between items-center">
+          <h1 className="text-2xl  sm:px-8 pt-6 font-semibold ">My Library</h1>
+          <div
+            onClick={() => {
+              setMenuState(!menuState);
+            }}
+            className="md:hidden gap-1 mt-5 hover:bg-black hover:text-white border-2 border-black py-2 px-3 flex items-center"
+          >
+            <h1>Library</h1>
+            <FaMusic />
+          </div>
         </div>
-      </div>
 
-      <div className="my-8">
-        {data?.map((item, i) => {
-          return (
-            <LibraryItem
-              id={item?.id}
-              key={i}
-              img={item?.img}
-              title={item?.title}
-              singer={item?.singer}
-            />
-          );
-        })}
+        <div className="my-8 ">
+          {data?.map((item, i) => {
+            return (
+              <LibraryItem
+                id={item?.id}
+                key={i}
+                img={item?.img}
+                title={item?.title}
+                singer={item?.singer}
+              />
+            );
+          })}
+        </div>
       </div>
     </div>
   );
